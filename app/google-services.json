@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "462001581683",
+    "firebase_url": "https://arsek-java.firebaseio.com",
+    "project_id": "arsek-java",
+    "storage_bucket": "arsek-java.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:462001581683:android:a4aa673875a7e31fa6c406",
+        "android_client_info": {
+          "package_name": "com.example.javakomutlar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "462001581683-90u6npsbgpl3d3l4dmi7fentecv1shrg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDuQCbIK2QyjzQAMaZR10bVVS1FGyR4EfE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "462001581683-90u6npsbgpl3d3l4dmi7fentecv1shrg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
