@@ -7,7 +7,7 @@ import javax.inject.Inject
 
 class RetrofitClient @Inject constructor() {
 
-    private val BaseUrl = "https://terminalcommands.herokuapp.com/"
+    private val BaseUrl = "https://firestore.googleapis.com/"
 
 
     fun getClient(): Retrofit {
