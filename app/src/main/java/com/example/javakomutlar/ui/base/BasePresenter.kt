@@ -1,7 +1,8 @@
 package com.example.javakomutlar.ui.base
 
-import com.example.javakomutlar.data.apiServices.ApiServices
+import android.content.Context
 import com.example.javakomutlar.data.dataManager.DataManager
+import com.example.javakomutlar.utility.key
 import javax.inject.Inject
 
 open class BasePresenter<V : MvpView> constructor(dataManager:DataManager) : MvpPresenter<V> {
@@ -18,6 +19,18 @@ open class BasePresenter<V : MvpView> constructor(dataManager:DataManager) : Mvp
     }
 
     override fun initPresenter() {
+    }
+
+    override fun setDetailFragment(position: String?, requireContext: Context) {
+
+    }
+
+    override fun setSubCategoryFragment(url: String?, requireContext: Context) {
+        mvpView.openSubCategoryFragment(key,url)
+    }
+
+    override fun setAboutUsFragment(position: String?, requireContext: Context) {
+
     }
 
 }

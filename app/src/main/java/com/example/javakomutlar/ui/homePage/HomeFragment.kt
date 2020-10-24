@@ -19,7 +19,8 @@ class HomeFragment : BaseFragment(), HomePageFragmentMvpView, SendId {
 
     lateinit var root: View
     lateinit var instance: HomeFragment
-    lateinit var adapter:HomeCategoryAdapter
+    lateinit var adapter: HomeCategoryAdapter
+    lateinit var liste: HomeCategoryModel
 
     @Inject
     lateinit var presenter: HomePageFragmentMvpPresenter<HomePageFragmentMvpView>
@@ -31,7 +32,7 @@ class HomeFragment : BaseFragment(), HomePageFragmentMvpView, SendId {
 
         (requireActivity().application as MvpApp).viewComponents?.injectHomePageFragment(this)
 
-        adapter= HomeCategoryAdapter(requireContext(),this)
+        adapter = HomeCategoryAdapter(requireContext(), this)
         presenter.onAttact(this)
         presenter.initPresenter()
 
@@ -40,10 +41,11 @@ class HomeFragment : BaseFragment(), HomePageFragmentMvpView, SendId {
 
     override fun loadDataCategorylist(response: HomeCategoryModel?) {
         if (response != null) {
-            adapter.setData(response)
+            liste = response
+            adapter.setData(liste)
         }
-        fragment_home_category_recyclerview.layoutManager=LinearLayoutManager(requireContext())
-        fragment_home_category_recyclerview.adapter=adapter
+        fragment_home_category_recyclerview.layoutManager = LinearLayoutManager(requireContext())
+        fragment_home_category_recyclerview.adapter = adapter
     }
 
     override fun getInstance(): Fragment {
@@ -54,6 +56,18 @@ class HomeFragment : BaseFragment(), HomePageFragmentMvpView, SendId {
     }
 
     override fun onItemClick(position: Int) {
+        var type = liste.documents?.get(position)?.fields?.type?.stringValue
+        when {
+            type == "1" -> {
+                presenter.setDetailFragment(liste.documents?.get(position)?.name, requireContext())
+            }
+            type == "2" -> {
+                presenter.setSubCategoryFragment(liste.documents?.get(position)?.name,requireContext())
+            }
+            type =="3" -> {
+                presenter.setAboutUsFragment(liste.documents?.get(position)?.name,requireContext())
+            }
+        }
 
     }
 
