@@ -26,5 +26,6 @@ class SplashScreenFragmentPresenter<V : SplashScreenFragmentMvpView>
             }
 
         }
-        thread.start()    }
+        thread.start()
+    }
 }

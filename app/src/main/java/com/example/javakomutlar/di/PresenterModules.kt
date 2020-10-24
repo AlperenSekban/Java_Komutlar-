@@ -42,7 +42,11 @@ class PresenterModules(app: Application) {
     }
     @Singleton
     @Provides
+<<<<<<< Updated upstream
     fun provideHomePagePresenter(dataManager: DataManager):HomePageFragmentMvpPresenter<HomePageFragmentMvpView>
+=======
+    fun provideHomePageFragmentPresenter(dataManager: DataManager): HomePageFragmentMvpPresenter<HomePageFragmentMvpView>
+>>>>>>> Stashed changes
     {
         return HomePageFragmentPresenter(dataManager)
     }
