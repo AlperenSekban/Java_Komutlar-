@@ -8,6 +8,9 @@ import com.example.javakomutlar.data.apiServices.RetrofitClient
 import com.example.javakomutlar.data.dataManager.DataManager
 import com.example.javakomutlar.ui.base.BasePresenter
 import com.example.javakomutlar.ui.base.MvpView
+import com.example.javakomutlar.ui.homePage.HomeFragment
+import com.example.javakomutlar.ui.homePage.HomePageFragmentMvpView
+import com.example.javakomutlar.ui.homePage.HomePageFragmentPresenter
 import com.example.javakomutlar.ui.splashScreen.SplashScreenFragment
 import com.example.javakomutlar.ui.splashScreen.SplashScreenFragmentMvpPresenter
 import com.example.javakomutlar.ui.splashScreen.SplashScreenFragmentMvpView
@@ -36,5 +39,10 @@ class PresenterModules(app: Application) {
     fun provideBasePresenter(dataManager: DataManager): BasePresenter<MvpView> {
         return BasePresenter(dataManager)
     }
-
+    @Singleton
+    @Provides
+    fun provideHomePagePresenter(dataManager: DataManager):HomePageFragmentPresenter<HomePageFragmentMvpView>
+    {
+        return HomePageFragmentPresenter(dataManager)
+    }
 }

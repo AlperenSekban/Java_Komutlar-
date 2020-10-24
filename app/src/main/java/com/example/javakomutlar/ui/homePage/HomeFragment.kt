@@ -5,10 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.javakomutlar.MvpApp
 import com.example.javakomutlar.R
 import com.example.javakomutlar.data.models.HomeCategoryModel
 import com.example.javakomutlar.ui.base.BaseFragment
 import com.example.javakomutlar.ui.base.ListSelectItem
+import com.example.javakomutlar.ui.base.MvpView
 import javax.inject.Inject
 
 class HomeFragment : BaseFragment(), HomePageFragmentMvpView, ListSelectItem {
@@ -23,6 +25,7 @@ class HomeFragment : BaseFragment(), HomePageFragmentMvpView, ListSelectItem {
         savedInstanceState: Bundle?
     ): View? {
         root = inflater.inflate(R.layout.fragment_home, container, false)
+        (requireActivity().application as MvpApp).viewComponents?.injectHomePageFragment(this)
         presenter.onAttact(this)
         presenter.initPresenter()
         return root
@@ -33,7 +36,10 @@ class HomeFragment : BaseFragment(), HomePageFragmentMvpView, ListSelectItem {
     }
 
     override fun getInstance(): Fragment {
-        TODO("Not yet implemented")
+        if (instance == null) {
+            instance = HomeFragment()
+        }
+        return instance as HomeFragment
     }
 
     override fun onItemClick(position: Int) {
