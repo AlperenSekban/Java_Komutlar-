@@ -9,6 +9,7 @@ import com.example.javakomutlar.data.dataManager.DataManager
 import com.example.javakomutlar.ui.base.BasePresenter
 import com.example.javakomutlar.ui.base.MvpView
 import com.example.javakomutlar.ui.homePage.HomeFragment
+import com.example.javakomutlar.ui.homePage.HomePageFragmentMvpPresenter
 import com.example.javakomutlar.ui.homePage.HomePageFragmentMvpView
 import com.example.javakomutlar.ui.homePage.HomePageFragmentPresenter
 import com.example.javakomutlar.ui.splashScreen.SplashScreenFragment
@@ -41,7 +42,7 @@ class PresenterModules(app: Application) {
     }
     @Singleton
     @Provides
-    fun provideHomePagePresenter(dataManager: DataManager):HomePageFragmentPresenter<HomePageFragmentMvpView>
+    fun provideHomePagePresenter(dataManager: DataManager):HomePageFragmentMvpPresenter<HomePageFragmentMvpView>
     {
         return HomePageFragmentPresenter(dataManager)
     }

@@ -32,7 +32,7 @@ class HomeFragment : BaseFragment(), HomePageFragmentMvpView, ListSelectItem {
     }
 
     override fun loadDataCategorylist(response: HomeCategoryModel?) {
-        TODO("Not yet implemented")
+        //
     }
 
     override fun getInstance(): Fragment {
@@ -43,7 +43,7 @@ class HomeFragment : BaseFragment(), HomePageFragmentMvpView, ListSelectItem {
     }
 
     override fun onItemClick(position: Int) {
-        TODO("Not yet implemented")
+        
     }
 
 

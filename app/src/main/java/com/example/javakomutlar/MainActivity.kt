@@ -16,8 +16,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
-
         createFragment(R.id.activity_mainActivity_frameLayout, SplashScreenFragment().getInstance(),this)
     }
 }
