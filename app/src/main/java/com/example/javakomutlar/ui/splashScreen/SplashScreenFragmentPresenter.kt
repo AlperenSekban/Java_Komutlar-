@@ -2,6 +2,7 @@ package com.example.javakomutlar.ui.splashScreen
 
 import com.example.javakomutlar.data.dataManager.DataManager
 import com.example.javakomutlar.ui.base.BasePresenter
+import com.example.javakomutlar.ui.homePage.HomeFragment
 import com.example.javakomutlar.utility.splashScreenSleepTime
 import javax.inject.Inject
 
@@ -18,7 +19,7 @@ class SplashScreenFragmentPresenter<V : SplashScreenFragmentMvpView>
             override fun run() {
                 try {
                     sleep(splashScreenSleepTime)
-                   // mvpView.goNextFragment(fragment)
+                    mvpView.goNextFragment(HomeFragment())
                 } catch (e: InterruptedException) {
                     e.printStackTrace()
                 }
