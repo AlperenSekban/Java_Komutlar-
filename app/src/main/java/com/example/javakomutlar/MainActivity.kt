@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import com.example.javakomutlar.data.apiServices.RestApi
 import com.example.javakomutlar.data.apiServices.RetrofitClient
-import com.example.javakomutlar.data.models.HomeCategory
+import com.example.javakomutlar.data.models.HomeCategoryModel
 import retrofit2.Call
 import retrofit2.Response
 
@@ -22,12 +22,12 @@ class MainActivity : AppCompatActivity() {
 
         var call = apiservices.bring()
 
-        call.enqueue(object : retrofit2.Callback<HomeCategory>{
-            override fun onResponse(call: Call<HomeCategory>, response: Response<HomeCategory>) {
+        call.enqueue(object : retrofit2.Callback<HomeCategoryModel>{
+            override fun onResponse(call: Call<HomeCategoryModel>, response: Response<HomeCategoryModel>) {
                 Log.i("çekiyorum",response.body().toString())
             }
 
-            override fun onFailure(call: Call<HomeCategory>, t: Throwable) {
+            override fun onFailure(call: Call<HomeCategoryModel>, t: Throwable) {
                 Log.i("çekiyorum","çekemedim :(")
             }
         })

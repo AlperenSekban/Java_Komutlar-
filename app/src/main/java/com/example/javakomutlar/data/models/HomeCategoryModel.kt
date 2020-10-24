@@ -2,7 +2,7 @@ package com.example.javakomutlar.data.models
 
 import com.google.gson.annotations.SerializedName
 
-data class HomeCategory(
+data class HomeCategoryModel(
 
 	@field:SerializedName("documents")
 	val documents: List<DocumentsItem?>? = null
