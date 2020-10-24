@@ -9,5 +9,5 @@ import javax.inject.Singleton
 @Component(modules = [PresenterModules::class, DataModules::class])
 interface ViewComponents {
     fun injectSplashFragment(splashScreenFragment: SplashScreenFragment)
-    fun injectHomePageFragment(homePageFragment: HomeFragment)
+    fun injectHomePageFragment(homeFragment: HomeFragment)
 }
