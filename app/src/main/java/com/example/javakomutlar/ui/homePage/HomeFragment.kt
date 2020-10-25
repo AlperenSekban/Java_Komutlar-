@@ -12,13 +12,15 @@ import com.example.javakomutlar.data.models.HomeCategoryModel
 import com.example.javakomutlar.ui.adapters.HomeCategoryAdapter
 import com.example.javakomutlar.ui.adapters.SendId
 import com.example.javakomutlar.ui.base.BaseFragment
+import com.example.javakomutlar.ui.subCategoryPage.SubCategoryFragment
+import com.example.javakomutlar.utility.createFragment
+import com.example.javakomutlar.utility.sendStringData
 import kotlinx.android.synthetic.main.fragment_home.*
 import javax.inject.Inject
 
 class HomeFragment : BaseFragment(), HomePageFragmentMvpView, SendId {
 
     lateinit var root: View
-    lateinit var instance: HomeFragment
     lateinit var adapter: HomeCategoryAdapter
     lateinit var liste: HomeCategoryModel
 
@@ -47,13 +49,17 @@ class HomeFragment : BaseFragment(), HomePageFragmentMvpView, SendId {
         fragment_home_category_recyclerview.layoutManager = LinearLayoutManager(requireContext())
         fragment_home_category_recyclerview.adapter = adapter
     }
-
-    override fun getInstance(): Fragment {
-        if (instance == null) {
-            instance = HomeFragment()
+    companion object{
+        var instance: HomeFragment?=null
+        fun getInstance(): Fragment {
+            if (instance == null) {
+                instance = HomeFragment()
+            }
+            return instance as HomeFragment
         }
-        return instance as HomeFragment
     }
+
+
 
     override fun onItemClick(position: Int) {
         var type = liste.documents?.get(position)?.fields?.type?.stringValue
@@ -62,13 +68,22 @@ class HomeFragment : BaseFragment(), HomePageFragmentMvpView, SendId {
                 presenter.setDetailFragment(liste.documents?.get(position)?.name, requireContext())
             }
             type == "2" -> {
-                presenter.setSubCategoryFragment(liste.documents?.get(position)?.name,requireContext())
+                presenter.setSubCategoryFragment(
+                    liste.documents?.get(position)?.name,
+                    requireContext()
+                )
             }
-            type =="3" -> {
-                presenter.setAboutUsFragment(liste.documents?.get(position)?.name,requireContext())
+            type == "3" -> {
+                presenter.setAboutUsFragment(liste.documents?.get(position)?.name, requireContext())
             }
         }
 
+    }
+
+    override fun openSubCategoryFragment(key: String, url: String) {
+        var subCategoryFragment=SubCategoryFragment.getInstance()
+        sendStringData(key,url,subCategoryFragment)
+        createFragment(R.id.activity_mainActivity_frameLayout,subCategoryFragment,requireContext())
     }
 
 

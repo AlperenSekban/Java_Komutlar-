@@ -1,9 +1,11 @@
 package com.example.javakomutlar.ui.homePage
 
+import android.content.Context
 import com.example.javakomutlar.data.dataManager.DataManager
 import com.example.javakomutlar.data.dataManager.ServiceCallback
 import com.example.javakomutlar.data.models.HomeCategoryModel
 import com.example.javakomutlar.ui.base.BasePresenter
+import com.example.javakomutlar.utility.key
 import javax.inject.Inject
 
 class HomePageFragmentPresenter<V : HomePageFragmentMvpView> @Inject constructor(dataManager: DataManager) :
@@ -26,6 +28,13 @@ class HomePageFragmentPresenter<V : HomePageFragmentMvpView> @Inject constructor
 
 
         })
+    }
+
+    override fun setSubCategoryFragment(url: String?, requireContext: Context) {
+        if (url!=null){
+            mvpView.openSubCategoryFragment(key,url)
+        }
+
     }
 
 }

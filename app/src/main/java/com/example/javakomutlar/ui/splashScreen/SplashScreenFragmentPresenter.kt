@@ -19,7 +19,7 @@ class SplashScreenFragmentPresenter<V : SplashScreenFragmentMvpView>
             override fun run() {
                 try {
                     sleep(splashScreenSleepTime)
-                    mvpView.goNextFragment(HomeFragment())
+                    mvpView.goNextFragment(HomeFragment.getInstance())
                 } catch (e: InterruptedException) {
                     e.printStackTrace()
                 }

@@ -16,6 +16,9 @@ import com.example.javakomutlar.ui.splashScreen.SplashScreenFragment
 import com.example.javakomutlar.ui.splashScreen.SplashScreenFragmentMvpPresenter
 import com.example.javakomutlar.ui.splashScreen.SplashScreenFragmentMvpView
 import com.example.javakomutlar.ui.splashScreen.SplashScreenFragmentPresenter
+import com.example.javakomutlar.ui.subCategoryPage.SubCategoryFragmentMvpPresenter
+import com.example.javakomutlar.ui.subCategoryPage.SubCategoryFragmentMvpView
+import com.example.javakomutlar.ui.subCategoryPage.SubCategoryFragmentPresenter
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -29,6 +32,7 @@ class PresenterModules(app: Application) {
         this.context = app
     }
 
+    @Singleton
     @Provides
     fun provideSplashScreenPresenter(dataManager: DataManager): SplashScreenFragmentMvpPresenter<SplashScreenFragmentMvpView> {
 
@@ -40,14 +44,16 @@ class PresenterModules(app: Application) {
     fun provideBasePresenter(dataManager: DataManager): BasePresenter<MvpView> {
         return BasePresenter(dataManager)
     }
+
     @Singleton
     @Provides
-<<<<<<< Updated upstream
-    fun provideHomePagePresenter(dataManager: DataManager):HomePageFragmentMvpPresenter<HomePageFragmentMvpView>
-=======
-    fun provideHomePageFragmentPresenter(dataManager: DataManager): HomePageFragmentMvpPresenter<HomePageFragmentMvpView>
->>>>>>> Stashed changes
-    {
+    fun provideHomePageFragmentPresenter(dataManager: DataManager): HomePageFragmentMvpPresenter<HomePageFragmentMvpView> {
         return HomePageFragmentPresenter(dataManager)
+    }
+
+    @Singleton
+    @Provides
+    fun provideSubCategoryFragmentPresenter(dataManager: DataManager):SubCategoryFragmentMvpPresenter<SubCategoryFragmentMvpView>{
+        return SubCategoryFragmentPresenter(dataManager)
     }
 }

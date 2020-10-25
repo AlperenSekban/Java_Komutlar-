@@ -5,4 +5,5 @@ import com.example.javakomutlar.ui.base.MvpView
 
 interface HomePageFragmentMvpView:MvpView {
     fun loadDataCategorylist(response: HomeCategoryModel?)
+    fun openSubCategoryFragment(key: String, url: String)
 }

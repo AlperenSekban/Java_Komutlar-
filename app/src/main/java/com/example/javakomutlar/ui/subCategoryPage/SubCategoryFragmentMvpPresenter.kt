@@ -1,4 +1,6 @@
 package com.example.javakomutlar.ui.subCategoryPage
 
-interface SubCategoryFragmentMvpPresenter {
+import com.example.javakomutlar.ui.base.MvpPresenter
+
+interface SubCategoryFragmentMvpPresenter <V:SubCategoryFragmentMvpView>:MvpPresenter<V>{
 }

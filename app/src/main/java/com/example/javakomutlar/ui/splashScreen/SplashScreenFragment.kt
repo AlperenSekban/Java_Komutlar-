@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import com.example.javakomutlar.MvpApp
 import com.example.javakomutlar.R
 import com.example.javakomutlar.ui.base.BaseFragment
+import com.example.javakomutlar.ui.homePage.HomeFragment
 import javax.inject.Inject
 
 //Recep Arslan
@@ -28,11 +29,14 @@ class SplashScreenFragment : BaseFragment(), SplashScreenFragmentMvpView {
         return root
     }
 
-    override fun getInstance(): Fragment {
-        if (instance == null) {
-            instance = SplashScreenFragment()
+    companion object{
+        var instance: HomeFragment?=null
+        fun getInstance(): Fragment {
+            if (instance == null) {
+                instance = HomeFragment()
+            }
+            return instance as HomeFragment
         }
-        return instance as SplashScreenFragment
     }
 
 
