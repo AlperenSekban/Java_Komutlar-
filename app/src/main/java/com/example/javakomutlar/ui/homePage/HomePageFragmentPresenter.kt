@@ -16,13 +16,8 @@ class HomePageFragmentPresenter<V : HomePageFragmentMvpView> @Inject constructor
         mvpView.showLoading()
         dataManager.getHomeCategories(object : ServiceCallback<HomeCategoryModel> {
             override fun onSuccess(response: HomeCategoryModel?) {
-                mvpView.hideLoading()
                 mvpView.loadDataCategorylist(response)
-<<<<<<< Updated upstream
                 mvpView.hideLoading()
-=======
-
->>>>>>> Stashed changes
             }
 
             override fun onError(errorCode: Int, errorMessage: String) {

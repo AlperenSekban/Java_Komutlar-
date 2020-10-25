@@ -26,7 +26,7 @@ open class BasePresenter<V : MvpView> constructor(dataManager:DataManager) : Mvp
     }
 
     override fun setSubCategoryFragment(url: String?, requireContext: Context) {
-        mvpView.openSubCategoryFragment(key,url)
+
     }
 
     override fun setAboutUsFragment(position: String?, requireContext: Context) {
