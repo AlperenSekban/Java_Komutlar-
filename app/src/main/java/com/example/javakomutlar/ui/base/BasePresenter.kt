@@ -21,15 +21,15 @@ open class BasePresenter<V : MvpView> constructor(dataManager:DataManager) : Mvp
     override fun initPresenter() {
     }
 
-    override fun setDetailFragment(position: String?, requireContext: Context) {
+    override fun setDetailFragment(position: String? ) {
 
     }
 
-    override fun setSubCategoryFragment(url: String?, requireContext: Context) {
+    override fun setSubCategoryFragment(url: String?) {
 
     }
 
-    override fun setAboutUsFragment(position: String?, requireContext: Context) {
+    override fun setAboutUsFragment(position: String?) {
 
     }
 

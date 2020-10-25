@@ -1,4 +1,4 @@
-package com.example.javakomutlar.data.HomeCategoryServices
+package com.example.javakomutlar.data.homeCategoryServices
 
 import com.example.javakomutlar.data.apiServices.RestApi
 import com.example.javakomutlar.data.apiServices.RetrofitClient

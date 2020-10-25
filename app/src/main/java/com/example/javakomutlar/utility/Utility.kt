@@ -62,3 +62,7 @@ fun goFragment(location: Int, fragment: Fragment, context: Context) {
         .setTransitionStyle(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
         .commit()
 }
+
+fun linkCombining(name : String,title:String):String{
+    return name+"/"+title
+}

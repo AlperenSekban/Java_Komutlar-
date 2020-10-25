@@ -30,7 +30,7 @@ class HomePageFragmentPresenter<V : HomePageFragmentMvpView> @Inject constructor
         })
     }
 
-    override fun setSubCategoryFragment(url: String?, requireContext: Context) {
+    override fun setSubCategoryFragment(url: String?) {
         if (url!=null){
             mvpView.openSubCategoryFragment(key,url)
         }

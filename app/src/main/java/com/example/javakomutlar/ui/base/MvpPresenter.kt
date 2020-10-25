@@ -5,7 +5,7 @@ import android.content.Context
 interface MvpPresenter<V:MvpView> {
     fun onAttact(mvpView: V)
     fun initPresenter()
-    fun setDetailFragment(position: String?, requireContext: Context)
-    fun setSubCategoryFragment(position: String?, requireContext: Context)
-    fun setAboutUsFragment(position: String?, requireContext: Context)
+    fun setDetailFragment(position: String?)
+    fun setSubCategoryFragment(position: String?)
+    fun setAboutUsFragment(position: String?)
 }

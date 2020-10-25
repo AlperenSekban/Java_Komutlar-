@@ -14,6 +14,7 @@ import com.example.javakomutlar.ui.adapters.SendId
 import com.example.javakomutlar.ui.base.BaseFragment
 import com.example.javakomutlar.ui.subCategoryPage.SubCategoryFragment
 import com.example.javakomutlar.utility.createFragment
+import com.example.javakomutlar.utility.linkCombining
 import com.example.javakomutlar.utility.sendStringData
 import kotlinx.android.synthetic.main.fragment_home.*
 import javax.inject.Inject
@@ -63,18 +64,18 @@ class HomeFragment : BaseFragment(), HomePageFragmentMvpView, SendId {
 
     override fun onItemClick(position: Int) {
         var type = liste.documents?.get(position)?.fields?.type?.stringValue
+        var url= linkCombining(liste.documents?.get(position)?.name!!,liste.documents?.get(position)?.fields?.title?.stringValue!!)
         when {
             type == "1" -> {
-                presenter.setDetailFragment(liste.documents?.get(position)?.name, requireContext())
+                presenter.setDetailFragment(url)
             }
             type == "2" -> {
                 presenter.setSubCategoryFragment(
-                    liste.documents?.get(position)?.name,
-                    requireContext()
+                    url
                 )
             }
             type == "3" -> {
-                presenter.setAboutUsFragment(liste.documents?.get(position)?.name, requireContext())
+                presenter.setAboutUsFragment(url)
             }
         }
 
