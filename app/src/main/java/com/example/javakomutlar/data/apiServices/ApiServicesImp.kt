@@ -3,6 +3,7 @@ package com.example.javakomutlar.data.apiServices
 import com.example.javakomutlar.data.homeCategoryServices.HomeCategoryServices
 import com.example.javakomutlar.data.dataManager.ServiceCallback
 import com.example.javakomutlar.data.detailCategoryModel.DetailCategoryServices
+import com.example.javakomutlar.data.models.DetailModel
 import com.example.javakomutlar.data.models.HomeCategoryModel
 import com.example.javakomutlar.data.models.SubCategoryModel
 import com.example.javakomutlar.data.subCategoryServices.SubCategoryServices
@@ -32,10 +33,11 @@ class ApiServicesImp : ApiServices {
         subCategoryServices.getSubCategory(url, serviceCallback)
     }
 
-    override fun getDetailCategory(url: String, serviceCallback: ServiceCallback<SubCategoryModel>
-    ) {
-        detailCategoryServices.getDetailCategory(url, serviceCallback)
+    override fun getDetailCategory(url: String, serviceCallback: ServiceCallback<DetailModel>) {
+        detailCategoryServices.getDetailCategory(url,serviceCallback)
     }
+
+
 
 
 }
