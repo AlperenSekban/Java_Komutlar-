@@ -8,6 +8,6 @@
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/fragment_home_category_recyclerview"/>
+        android:id="@+id/fragment_sub_category_recyclerview"/>
 
 </FrameLayout>

@@ -10,6 +10,7 @@ import com.example.javakomutlar.MvpApp
 import com.example.javakomutlar.R
 import com.example.javakomutlar.data.models.HomeCategoryModel
 import com.example.javakomutlar.ui.adapters.HomeCategoryAdapter
+import com.example.javakomutlar.ui.adapters.SubCategoryAdapter
 import com.example.javakomutlar.ui.adapters.SendId
 import com.example.javakomutlar.ui.base.BaseFragment
 import com.example.javakomutlar.ui.subCategoryPage.SubCategoryFragment
