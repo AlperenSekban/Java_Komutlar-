@@ -19,7 +19,7 @@ class SubCategoryFragmentPresenter<V : SubCategoryFragmentMvpView> @Inject const
         mvpView.showLoading()
         dataManager.getSubCategories(url,object :ServiceCallback<SubCategoryModel>{
             override fun onSuccess(response: SubCategoryModel?) {
-                Log.i("ssss",response.toString())
+                mvpView.loadDateCategorylist(response)
                 mvpView.hideLoading()
             }
 

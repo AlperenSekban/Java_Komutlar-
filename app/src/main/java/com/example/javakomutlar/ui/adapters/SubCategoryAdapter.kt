@@ -8,20 +8,21 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.javakomutlar.R
 import com.example.javakomutlar.data.models.HomeCategoryModel
+import com.example.javakomutlar.data.models.SubCategoryModel
 
-class HomeCategoryAdapter(val context: Context, val sendId: SendId) :
-    RecyclerView.Adapter<HomeCategoryAdapter.Define>() {
+class SubCategoryAdapter(val context: Context, val sendId: SendId) :
+    RecyclerView.Adapter<SubCategoryAdapter.Define>() {
 
-    lateinit var liste: HomeCategoryModel
+    lateinit var liste: SubCategoryModel
 
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeCategoryAdapter.Define {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SubCategoryAdapter.Define {
         val categoryLayout =
             LayoutInflater.from(context).inflate(R.layout.layout_home_catogories, parent, false)
         return Define(categoryLayout)
     }
 
-    override fun onBindViewHolder(holder: HomeCategoryAdapter.Define, position: Int) {
+    override fun onBindViewHolder(holder: SubCategoryAdapter.Define, position: Int) {
         val category = liste.documents
         holder.categoryTitle.text = category?.get(position)?.fields?.title?.stringValue
     }
@@ -30,7 +31,7 @@ class HomeCategoryAdapter(val context: Context, val sendId: SendId) :
         return liste.documents!!.size
     }
 
-    fun setData(liste: HomeCategoryModel) {
+    fun setData(liste: SubCategoryModel) {
         this.liste = liste
         notifyDataSetChanged()
     }
@@ -46,4 +47,5 @@ class HomeCategoryAdapter(val context: Context, val sendId: SendId) :
         }
 
     }
+
 }
