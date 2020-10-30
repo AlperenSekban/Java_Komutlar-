@@ -1,5 +1,6 @@
 package com.example.javakomutlar.data.apiServices
 
+import com.example.javakomutlar.data.models.DetailModel
 import com.example.javakomutlar.data.models.HomeCategoryModel
 import com.example.javakomutlar.data.models.SubCategoryModel
 import okhttp3.ResponseBody
@@ -14,4 +15,7 @@ interface RestApi {
 
     @GET
     fun getSubCategory(@Url url: String?): Call<SubCategoryModel>?
+
+    @GET
+    fun getDetailCategory(@Url url: String): Call<DetailModel>
 }

@@ -7,6 +7,8 @@ import com.example.javakomutlar.data.apiServices.ApiServicesImp
 import com.example.javakomutlar.data.apiServices.RetrofitClient
 import com.example.javakomutlar.data.dataManager.DataManager
 import com.example.javakomutlar.data.dataManager.DataManagerImp
+import com.example.javakomutlar.data.detailCategoryModel.DetailCategoryServices
+import com.example.javakomutlar.data.detailCategoryModel.DetailCategoryServicesImp
 import com.example.javakomutlar.data.subCategoryServices.SubCategoryServices
 import com.example.javakomutlar.data.subCategoryServices.SubCategoryServicesImp
 import dagger.Module
@@ -18,20 +20,33 @@ class DataModules {
     fun provideRetrofitClient(): RetrofitClient {
         return RetrofitClient()
     }
+
     @Provides
-    fun provideApiServices(homeCategoryServices: HomeCategoryServices,subCategoryServices: SubCategoryServices): ApiServices {
-        return ApiServicesImp(homeCategoryServices,subCategoryServices)
+    fun provideApiServices(
+        homeCategoryServices: HomeCategoryServices,
+        subCategoryServices: SubCategoryServices,
+        detailCategoryServices: DetailCategoryServices
+    ): ApiServices {
+        return ApiServicesImp(homeCategoryServices, subCategoryServices, detailCategoryServices)
     }
+
     @Provides
-    fun ProvideDataManager(apiServices:ApiServices):DataManager{
+    fun ProvideDataManager(apiServices: ApiServices): DataManager {
         return DataManagerImp(apiServices)
     }
+
     @Provides
-    fun ProvideHomeCategoryServices(retrofitClient: RetrofitClient):HomeCategoryServices{
+    fun ProvideHomeCategoryServices(retrofitClient: RetrofitClient): HomeCategoryServices {
         return HomeCategoryServicesImp(retrofitClient)
     }
+
     @Provides
-    fun ProvideSubCategoryServices(retrofitClient: RetrofitClient):SubCategoryServices{
+    fun ProvideSubCategoryServices(retrofitClient: RetrofitClient): SubCategoryServices {
         return SubCategoryServicesImp(retrofitClient)
+    }
+
+    @Provides
+    fun ProvideDetailCategoryServices(retrofitClient: RetrofitClient): DetailCategoryServices {
+        return DetailCategoryServicesImp(retrofitClient)
     }
 }
