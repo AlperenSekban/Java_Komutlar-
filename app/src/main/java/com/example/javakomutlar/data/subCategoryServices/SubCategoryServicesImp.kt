@@ -17,9 +17,10 @@ class SubCategoryServicesImp:SubCategoryServices {
     }
 
     override fun getSubCategory(url: String,serviceCallback: ServiceCallback<SubCategoryModel>) {
-        var call =apiServices.getSubCategory(url)
+        var temp="/v1/"+url
+        var call =apiServices.getSubCategory(temp)
 
-        call.enqueue(object : retrofit2.Callback<SubCategoryModel>{
+        call?.enqueue(object : retrofit2.Callback<SubCategoryModel>{
             override fun onResponse(
                 call: Call<SubCategoryModel>,
                 response: Response<SubCategoryModel>
