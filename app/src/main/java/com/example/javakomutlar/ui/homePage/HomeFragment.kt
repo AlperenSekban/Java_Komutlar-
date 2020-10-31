@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.javakomutlar.MvpApp
 import com.example.javakomutlar.R
@@ -18,6 +19,7 @@ import com.example.javakomutlar.utility.createFragment
 import com.example.javakomutlar.utility.linkCombining
 import com.example.javakomutlar.utility.sendStringData
 import kotlinx.android.synthetic.main.fragment_home.*
+import java.text.DateFormat
 import javax.inject.Inject
 
 class HomeFragment : BaseFragment(), HomePageFragmentMvpView, SendId {
@@ -48,7 +50,7 @@ class HomeFragment : BaseFragment(), HomePageFragmentMvpView, SendId {
             liste = response
             adapter.setData(liste)
         }
-        fragment_home_category_recyclerview.layoutManager = LinearLayoutManager(requireContext())
+        fragment_home_category_recyclerview.layoutManager = GridLayoutManager(requireContext(), 2)
         fragment_home_category_recyclerview.adapter = adapter
     }
     companion object{

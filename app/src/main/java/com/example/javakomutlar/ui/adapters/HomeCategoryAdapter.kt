@@ -17,7 +17,7 @@ class HomeCategoryAdapter(val context: Context, val sendId: SendId) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeCategoryAdapter.Define {
         val categoryLayout =
-            LayoutInflater.from(context).inflate(R.layout.layout_home_catogories, parent, false)
+            LayoutInflater.from(context).inflate(R.layout.homelayout, parent, false)
         return Define(categoryLayout)
     }
 
@@ -39,7 +39,7 @@ class HomeCategoryAdapter(val context: Context, val sendId: SendId) :
         var categoryTitle: TextView
 
         init {
-            categoryTitle = itemview.findViewById(R.id.layout_home_catogories_catogory_textView)
+            categoryTitle = itemview.findViewById(R.id.layouthome_textView)
             itemview.setOnClickListener({
                 sendId.onItemClick(adapterPosition)
             })

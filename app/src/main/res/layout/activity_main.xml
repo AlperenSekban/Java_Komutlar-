@@ -8,6 +8,6 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@android:color/black"
+        android:background="#142740"
         android:id="@+id/activity_mainActivity_frameLayout"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

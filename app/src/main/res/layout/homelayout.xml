@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginTop="10dp"
+    android:background="#516073"
+    android:columnCount="2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:gravity="center"
+
+            android:background="#6C7A8C"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/RecyclerView_card_view"
+                android:layout_width="200dp"
+                android:layout_height="75dp"
+                app:cardCornerRadius="30dp"
+                android:layout_margin="15dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:paddingLeft="3dp"
+                    android:paddingRight="3dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="right"
+                    android:gravity="center"
+                    android:background="#CCD1D9"
+                    android:text="recep arslan 1230"
+                    android:textColor="#142740"
+                    android:textStyle="italic"
+                    android:id="@+id/layouthome_textView"
+                    android:textSize="17dp">
+
+                </TextView>
+
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+
+    </GridLayout>
+

@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.javakomutlar.R
-import com.example.javakomutlar.data.models.HomeCategoryModel
 import com.example.javakomutlar.data.models.SubCategoryModel
 
 class SubCategoryAdapter(val context: Context, val sendId: SendId) :
@@ -18,7 +17,7 @@ class SubCategoryAdapter(val context: Context, val sendId: SendId) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SubCategoryAdapter.Define {
         val categoryLayout =
-            LayoutInflater.from(context).inflate(R.layout.layout_home_catogories, parent, false)
+            LayoutInflater.from(context).inflate(R.layout.layout_show_subcategories, parent, false)
         return Define(categoryLayout)
     }
 
